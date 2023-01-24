@@ -4,7 +4,12 @@
   createApp({
     data() {
       return {
-
+        taskList: [
+          { text: 'Do homework', done: true },
+          { text: 'Buy groceries', done: false },
+          { text: 'Clean room', done: false },
+          { text: 'Do laundry', done: false },
+        ]
       }
     },
     methods:{
