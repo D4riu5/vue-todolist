@@ -17,14 +17,32 @@
     </head>
     <body class="bg-dark text-white">
         
-    <div id="app">
+    <div id="app" class="container">
 
-        <header>
+        <header class="row g-3 mb-5">
+
+            <div class="col-6 offset-3 d-flex align-items-center justify-content-center my-h">
+                <img src="img/logo.png" class="img-fluid custom-height" alt="">
+            </div>
+
+            <form class="d-flex justify-content-center">
+                <input id="newTaskInput" class="form-control border-success me-2 bg-dark w-25 text-white " type="text" placeholder="New task..">
+                <button class="btn btn-outline-success" type="submit">Add task</button>
+            </form>
 
         </header>
 
-        <main>
-
+        <main class="row">
+            <div class="col-8 offset-2">
+                <ul class="list-group list-group">
+                    <li class="list-group-item bg-transparent border-success text-white">An item</li>
+                    <li class="list-group-item bg-transparent border-success text-white">A second item</li>
+                    <li class="list-group-item bg-transparent border-success text-white">A third item</li>
+                    <li class="list-group-item bg-transparent border-success text-white">A fourth item</li>
+                    <li class="list-group-item bg-transparent border-success text-white">And a fifth one</li>
+                </ul>
+                <h2 class="text-center m-3"> You have 0 Tasks!</h2>
+            </div>
         </main>
     </div>
 

@@ -1,0 +1,11 @@
+.custom-height{
+    height: 80%;
+}
+
+.my-h{
+    height: 100px;
+}
+
+#newTaskInput::placeholder{
+    color: white;
+}
