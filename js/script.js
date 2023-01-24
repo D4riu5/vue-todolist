@@ -13,7 +13,9 @@
       }
     },
     methods:{
-
+      removeTask(index){
+        this.taskList.splice(index, 1)
+      }
     },
     mounted() {
     console.log(`the component is now mounted.`)
