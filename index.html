@@ -36,7 +36,8 @@
                 <ul v-if="taskList.length > 0" class="list-group list-group lh-lg">
                     <li v-for="(task, index) in taskList"  @click="changeStatus(index)" class="list-group-item bg-transparent border-success" v-bind:style="{'text-decoration': task.done ? 'line-through' : 'none', 'color': task.done ? 'limegreen !important' : 'white'}"> 
                         {{ task.text }}
-                        <i @click="removeTask(index)" class="float-end fas fa-times lh-lg text-white px-2"></i>
+                        <!-- @click.stop prevents the click on parent elements so the click is viable only on the <i> and not its parents -->
+                        <i @click.stop="removeTask(index)" class="float-end fas fa-times lh-lg text-white px-2"></i>
                     </li>
                 </ul>
                 <h2 v-else class="text-center m-3"> You have 0 Tasks!</h2>
