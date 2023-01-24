@@ -20,24 +20,23 @@
     <div id="app" class="container">
 
         <header class="row g-3 mb-5">
-
+            <!-- Logo -->
             <div class="col-6 offset-3 d-flex align-items-center justify-content-center my-h">
                 <img src="img/logo.png" class="img-fluid custom-height" alt="">
             </div>
-
-            <form class="d-flex justify-content-center">
-                <input id="newTaskInput" class="form-control border-success me-2 bg-dark w-25 text-white " type="text" placeholder="New task..">
+            <!-- form -->
+            <form @submit.prevent="addNewTask()"class="d-flex justify-content-center">
+                <input type="text" v-model="newInput" required minlength="4" id="newTaskInput" class="form-control border-success me-2 bg-dark w-25 text-white " type="text" placeholder="New task..">
                 <button class="btn btn-outline-success" type="submit">Add task</button>
             </form>
-
         </header>
 
         <main class="row">
             <div class="col-8 offset-2">
                 <ul v-if="taskList.length > 0" class="list-group list-group lh-lg">
-                    <li v-for="(task, index) in taskList" class="list-group-item bg-transparent border-success" v-bind:style="{'text-decoration': task.done ? 'line-through' : 'none', 'color': task.done ? 'orange !important' : 'white'}"> 
+                    <li v-for="(task, index) in taskList"  @click="changeStatus(index)" class="list-group-item bg-transparent border-success" v-bind:style="{'text-decoration': task.done ? 'line-through' : 'none', 'color': task.done ? 'limegreen !important' : 'white'}"> 
                         {{ task.text }}
-                        <i @click="removeTask(index)" class="float-end fas fa-times lh-lg text-white"></i>
+                        <i @click="removeTask(index)" class="float-end fas fa-times lh-lg text-white px-2"></i>
                     </li>
                 </ul>
                 <h2 v-else class="text-center m-3"> You have 0 Tasks!</h2>
